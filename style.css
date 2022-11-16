@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+*{
+    box-sizing: border-box;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:"h h h"
+                        "n a as"
+                        "f f f";
+                        
+}
+header,article,aside,nav,footer{
+    border: 1px black solid;
+    padding: 10px;
+}
+header{
+    grid-area: h;
+}
+article{
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:"d d d d" ;
+}
+h3{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blueviolet;
+}
+.doboz{
+    grid-area: "d";
+    padding: 10px;
+    border: 1px black solid;
+    
+}
+img{
+    width: 400px;
+}
+nav{
+    grid-area: n;
+
+}
+aside{
+    grid-area: as;
+}
+footer{
+    grid-area: f;
+}
+
+@media screen and (max-width:600px) {
+    main{
+        display: grid;
+        grid-template-columns:  2fr 1fr;
+        grid-template-areas:"h "
+                            "n"
+                            "a "
+                            "f";
+        
+                            
+    }
+    article{
+        grid-area: a;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:"d" "d" "d" "d" ;
+    }
+}
