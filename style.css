@@ -45,7 +45,7 @@ h3{
    
 }
 .doboz{
-    grid-area: d;
+    grid-area: "d";
     padding: 10px;
     border: 1px black solid;
     background-color: bisque;
