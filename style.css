@@ -2,17 +2,23 @@ body{
     margin: 0;
     padding: 0;
     background-color: antiquewhite;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 *{
     box-sizing: border-box;
 }
 main{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns:20%  60% 20%;
     grid-template-areas:"h h h"
                         "n a as"
                         "f f f";
                         
+}
+#logo{
+    width: 80px;
+    float: right;
+    
 }
 header,article,aside,nav,footer{
     border: 1px black solid;
@@ -20,6 +26,11 @@ header,article,aside,nav,footer{
 }
 header{
     grid-area: h;
+    background-color: bisque;
+    
+}
+h1{
+    text-align: center;
 }
 article{
     grid-area: a;
@@ -30,36 +41,106 @@ article{
 h3{
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: blueviolet;
+    color: rgb(116, 53, 175);
+   
 }
 .doboz{
-    grid-area: "d";
+    grid-area: d;
     padding: 10px;
     border: 1px black solid;
+    background-color: bisque;
     
 }
+p{
+    text-align: left;
+}
 img{
-    width: 400px;
+    width: 100%;
+    margin: 10px;
+}
+.kep{
+    height: 200px;
+    overflow: hidden;
+    clear: none;
 }
 nav{
     grid-area: n;
-
+    
+   
+}
+ul{
+    list-style: none;
+    text-align: center;
 }
 aside{
     grid-area: as;
 }
 footer{
     grid-area: f;
+    text-align: center;
+    background-color: bisque;
 }
+#osszesen>h3{
+    color: firebrick;
+}
+a:link {
+    color: rgb(18, 19, 18);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(68, 141, 190);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(12, 5, 110);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: rgb(145, 12, 150);
+    background-color: transparent;
+    text-decoration: underline;
+  }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
     main{
         display: grid;
-        grid-template-columns:  2fr 1fr;
+        grid-template-columns:  1fr;
         grid-template-areas:"h "
                             "n"
                             "a "
+                            "as"
                             "f";
+        
+                            
+    }
+    article{
+        grid-area: a;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:"d d" 
+        "d d" ;
+
+    }
+
+
+}
+@media screen and (max-width:400px) {
+    main{
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-areas:"h "
+                            "as"
+                            "n"
+                            "a "
+                            
+                            "f";
+        
         
                             
     }
@@ -68,5 +149,8 @@ footer{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:"d" "d" "d" "d" ;
+    }
+    header,article,aside,nav,footer{
+        font-size: larger;
     }
 }
